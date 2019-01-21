@@ -4,18 +4,6 @@
     "pages/me/main",
     "pages/detail/main"
   ],
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/main",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/me/main",
-        "text": "我"
-      }
-    ]
-  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
