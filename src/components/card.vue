@@ -2,9 +2,9 @@
   <div class="item">
     <h3 class="item-title">{{list.title}}</h3>
     <div class="item-header">
-      <span>作者：大漠</span>
-      <span>日期：2019-01-15</span>
-      <span>点击：1975</span>
+      <span v-show="list.author">作者：{{list.author}}</span>
+      <span v-show="list.release_date">日期：{{format}}</span>
+      <span v-show="list.views">浏览：{{list.views}}</span>
     </div>
     <div class="item-tags">
       <span v-for="(itl, i) in list.tags" :key="i">{{itl}}</span>
@@ -22,6 +22,10 @@ export default {
   computed: {
     detailUrl () {
       return `/pages/detail/main?id=${this.list.id}`
+    },
+    format () {
+      let d = this.list.release_date || ''
+      return d.slice(0, 10)
     }
   }
 }
@@ -30,20 +34,21 @@ export default {
 <style lang="scss">
 $white: #fff;
 $bg-color: #f7f7f7;
-$text-main: #333;
-$button-primary: #67c23a;
+$text-default: #969fa9;
+$button-primary: #409eff;
+$text-sign: #999;
 .item{
-  margin: 10px 0;
-  padding: 8px;
+  margin: 15px 0;
+  padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
   .item-title{
     font-size: 18px;
   }
   .item-header{
-    font-size: 14px;
+    font-size: 12px;
     margin: 8px 0 5px;
-    opacity: 0.8;
+    color: $text-sign;
     span{
       display:inline-block;
       margin: 0 5px;
@@ -56,13 +61,16 @@ $button-primary: #67c23a;
     }
   }
   .item-tags{
-    font-size: 14px;
-    opacity: 0.5;
+    font-size: 12px;
+    color: $text-sign;
     span{
       display: inline-block;
       margin: 0 5px;
-      height: 18px;
-      line-height: 18px;
+      padding: 1px 4px;
+      height: 16px;
+      line-height: 16px;
+      border: 1px solid $text-sign;
+      border-radius: 5px;
       &:first-child{
         margin-left: 0;
       }
@@ -75,6 +83,7 @@ $button-primary: #67c23a;
     margin: 5px 0 8px;
     font-size: 16px;
     word-wrap:break-word;
+    color: $text-default;
   }
   .item-button{
     height: 35px;

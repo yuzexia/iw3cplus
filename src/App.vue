@@ -7,6 +7,17 @@ export default {
     wx.setStorageSync('logs', logs)
 
     console.log('app created and cache logs by setStorageSync')
+  },
+  onLaunch () {
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
+  onShareAppMessage () {
+    return {
+      title: 'w3cplus.com',
+      path: 'pages/index/main'
+    }
   }
 }
 </script>

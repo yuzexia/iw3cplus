@@ -5,7 +5,8 @@ module.exports = async (ctx) => {
     console.log(page, size)
     const mysqlSelect = mysql('lists')
                         .select('lists.*', 'threads.tid')
-                        .join('threads', 'lists.title', 'threads.title')
+                        .join('threads', 'lists.id', 'threads.tid')
+                        .orderBy('release_date', 'desc')
     console.log('mysqlselect', mysqlSelect)
     let lists
     lists = await mysqlSelect.limit(size).offset(Number(page) * 10)

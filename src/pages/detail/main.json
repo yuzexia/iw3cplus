@@ -1,3 +1,6 @@
 {
-    "navigationBarTitleText": "详情"
+    "navigationBarTitleText": "详情",
+    "usingComponents": {
+        "wxparser": "plugin://wxparserPlugin/wxparser"
+    }
 }
