@@ -54,19 +54,9 @@ export default {
         }
       })
     },
-    onLoad () {
-      // wx.showShareMenu({
-      //   withShareTicket: true
-      // })
-    },
-    // onShareAppMessage () {
-    //   return {
-    //     title: 'w3cplus.com',
-    //     path: 'pages/index/main'
-    //   }
-    // },
     // 获取列表
     async getLists (init) {
+      wx.showLoading({title: '加载中...'})
       if (init) {
         this.page = 0
         this.more = true
@@ -86,6 +76,7 @@ export default {
       } else {
         this.lists = this.lists.concat(list.data.list)
       }
+      wx.hideLoading()
     }
   },
 

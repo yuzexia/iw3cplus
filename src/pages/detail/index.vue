@@ -16,14 +16,13 @@
     <div class="detail-content">
         <!-- <div v-html="detail.message"></div> -->
         <wxParse className="detail-message" :content="detail.message" @preview="preview" @navigate="navigate" :imageProp="imageProp" :noData="noData"></wxParse>
-        <!-- <wxparser class="detail-message" :rich-text="formatMsg"></wxparser> -->
         <div class="detail-share">
           <button type="default" open-type="share">分享</button>
         </div>
         <div class="detail-signature">
           <p>著作权归作者所有。</p>
           <p>商业转载请联系作者获得授权,非商业转载请注明出处。</p>
-          <p>原文: <i>{{detail.titleurl}}</i> © w3cplus.com</p>
+          <p>原文链接: <i>{{detail.titleurl}}</i> © w3cplus.com</p>
         </div>
     </div>
   </div>
@@ -38,6 +37,7 @@ export default {
     return {
       tid: 0,
       detail: {},
+      message: '',
       imageProp: {
         mode: 'aspectFit',
         padding: 0,
@@ -62,7 +62,6 @@ export default {
           return `src="${config.imgHost}${item.slice(5)}`
         }).replace(/\\/g, '').replace(/\n/g, '')
       }
-      console.log('msg:::', msg)
       return msg
     }
   },
@@ -72,7 +71,6 @@ export default {
   mounted () {
     console.log('config', this.$root.$mp)
     this.tid = this.$root.$mp.query.id
-    console.log('=====', this.tid)
     this.getDetail()
   },
   beforeDestroy () {
@@ -103,7 +101,6 @@ export default {
       console.log(detail)
       if (Number(detail.code) === 0 && detail.data) {
         this.detail = detail.data
-        console.log('this.detail:::', this.detail)
         wx.hideLoading()
       }
     },

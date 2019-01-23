@@ -9,9 +9,13 @@ export default {
     console.log('app created and cache logs by setStorageSync')
   },
   onLaunch () {
+    wx.showLoading({title: '加载中'})
     wx.showShareMenu({
       withShareTicket: true
     })
+  },
+  onShow () {
+    wx.hideLoading()
   },
   onShareAppMessage () {
     return {
