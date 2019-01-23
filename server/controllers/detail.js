@@ -14,5 +14,7 @@ module.exports = async (ctx) => {
         tags: JSON.parse(detail.tags),
         msg: 'success'
     })
+    // 浏览量增加1
+    await mysql('lists').select('*').where('id', tid).increment('views', 1)
 }
 
