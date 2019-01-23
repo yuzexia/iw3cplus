@@ -28,7 +28,6 @@ export default {
     this.getLists(true)
   },
   onReachBottom () {
-    console.log('触底了.....')
     if (!this.more) {
       return false
     }
@@ -36,10 +35,6 @@ export default {
     this.getLists()
   },
   methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      wx.navigateTo({ url })
-    },
     getUserInfo () {
       // 调用登录接口
       wx.login({
