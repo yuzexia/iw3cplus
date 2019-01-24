@@ -7,13 +7,14 @@
 		"minified": true,
 		"newFeature": true,
 		"nodeModules": true,
-		"autoAudits": false
+		"autoAudits": true
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
 	"qcloudRoot": "server/",
 	"appid": "wx5cfea44e3c9b8f5d",
 	"projectname": "w3cplus-mini",
+	"libVersion": "2.5.0",
 	"condition": {
 		"search": {
 			"current": -1,
