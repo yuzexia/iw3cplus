@@ -2,13 +2,13 @@
 export default {
   created () {},
   onLaunch () {
-    wx.showLoading({title: '加载中'})
+    console.log('000000')
     wx.showShareMenu({
       withShareTicket: true
     })
   },
   onShow () {
-    wx.hideLoading()
+    console.log('111111')
   },
   onShareAppMessage () {
     return {

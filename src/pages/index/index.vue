@@ -74,7 +74,11 @@ export default {
     }
   },
   mounted () {
+    console.log('222222')
     this.getLists(true)
+  },
+  onLoad () {
+    wx.showLoading({title: '加载中'})
   }
 }
 </script>
@@ -85,7 +89,7 @@ $bg-color: #f7f7f7;
 $text-main: #262a2f;
 $button-primary: #67c23a;
 .item-box{
-  padding: 0 30rpx;
+  // padding: 0 30rpx;
   color: $text-main;
 }
 </style>
