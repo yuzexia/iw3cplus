@@ -74,7 +74,7 @@ $content-text: rgba(0,0,0,.54);
 
 .item{
   margin: 10px 0;
-  padding: 8px 16px;
+  padding: 8px 10px;
   font-size: 0;
   // border-bottom: 1px solid #eee;
   border-radius: 3px;
@@ -99,6 +99,7 @@ $content-text: rgba(0,0,0,.54);
       margin: 5px 0;
       color: $content-text;
       font-size: 12px;
+      // text-indent: 15px;
       // font-weight: 400;
       word-break: break-all;
       overflow: hidden;
