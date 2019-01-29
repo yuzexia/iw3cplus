@@ -56,7 +56,7 @@ export default {
         this.more = true
       }
       wx.showNavigationBarLoading()
-      const list = await get('/weapp/lists', {page: this.page})
+      const list = await get('/weapp/lists', {page: this.page, size: 10})
       console.log(list)
 
       if (list.data.list.length < 10 && this.page > 0) {
@@ -85,11 +85,12 @@ export default {
 
 <style lang="scss">
 $white: #fff;
-$bg-color: #f7f7f7;
+$bg-color: #F1F1F1;
 $text-main: #262a2f;
 $button-primary: #67c23a;
 .item-box{
-  // padding: 0 30rpx;
+  padding: 0 10px;
   color: $text-main;
+  background: $bg-color;
 }
 </style>

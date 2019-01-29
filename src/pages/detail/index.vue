@@ -118,6 +118,10 @@ export default {
 
 <style lang="scss">
 @import url("~mpvue-wxparse/src/wxParse.css");
+
+$title-text: rgba(0,0,0,.84);
+$content-text: rgba(0,0,0,.54);
+
 $white: #fff;
 $bg-color: #f7f7f7;
 $title-color: #00b7e9;
@@ -131,6 +135,8 @@ $hover: #29B4F0;
   background: $white;
   .detail-title {
     font-size: 18px;
+    color: $title-text;
+    font-weight: 600;
   }
   .detail-header {
     margin: 8px 0;
@@ -152,9 +158,11 @@ $hover: #29B4F0;
     }
     .detail-tags {
       font-size: 12px;
-      margin-top: 5px;
+      // margin-top: 5px;
       opacity: 0.5;
       span{
+        margin-top: 5px;
+        margin-left: 0;
         padding: 1px 4px;
         display: inline-block;
         height: 16px;
