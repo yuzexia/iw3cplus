@@ -41,7 +41,7 @@ export default {
       imageProp: {
         mode: 'aspectFit',
         padding: 0,
-        lazyLoad: false,
+        lazyLoad: true,
         domain: 'www.w3cplus.com'
       },
       noData: '<div style="color: #00b7e9;text-align:center;">Loading...</div>'

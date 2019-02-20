@@ -71,11 +71,28 @@ export default {
         this.lists = this.lists.concat(list.data.list)
       }
       wx.hideLoading()
+    },
+    // 获取扇贝每日一句
+    getShanbay () {
+      wx.request({
+        url: 'https://rest.shanbay.com/api/v2/quote/quotes/today/',
+        data: {},
+        header: {
+          'content-type': 'application/json'
+        },
+        success (res) {
+          console.log('res:::', res)
+        },
+        error (err) {
+          console.log('error:::', err)
+        }
+      })
     }
   },
   mounted () {
     console.log('222222')
     this.getLists(true)
+    this.getShanbay()
   },
   onLoad () {
     wx.showLoading({title: '加载中'})
