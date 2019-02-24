@@ -88,8 +88,8 @@ export default {
         }
       })
     }
-  },
-  mounted () {
+  }, () {
+  mounted
     console.log('222222')
     this.getLists(true)
     this.getShanbay()
