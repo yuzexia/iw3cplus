@@ -92,7 +92,7 @@ export default {
   mounted () {
     console.log('222222')
     this.getLists(true)
-    this.getShanbay()
+    // this.getShanbay()
   },
   onLoad () {
     wx.showLoading({title: '加载中'})
