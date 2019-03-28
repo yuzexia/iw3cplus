@@ -8,8 +8,9 @@
         <span class="time">{{format}}</span>
       </div>
     </div>
-    <div class="item-right">
-      <canvas :canvas-id="canvasId"></canvas>
+    <div class="item-right" ref="cardClient">
+      <!-- <canvas :canvas-id="canvasId"></canvas> -->
+      <span :style="{background: formatBackground}">{{formatTitle}}</span>
     </div>
   </a>
 </template>
@@ -19,7 +20,8 @@ export default {
   props: ['list'],
   data () {
     return {
-      imgUrl: ''
+      imgUrl: '',
+      bgColor: ['#1AAD19', '#2BA245', '#4D4D4D', '#888888', '#AAAAAA', '#F1F1F1', '#91ED61', '#FFBE00', '#EA6853', '#F76260', '#D84E43', '#2782D7', '#10AEFF']
     }
   },
   computed: {
@@ -37,10 +39,19 @@ export default {
     },
     canvasId () {
       return `headImg${this.list.id}`
+    },
+    formatTitle () {
+      let title = this.list.title.replace(/\s+/g, '')
+      let textIndex = Math.floor(Math.random() * title.length)
+      return title[textIndex]
+    },
+    formatBackground () {
+      let random = Math.floor(Math.random() * this.bgColor.length)
+      return this.bgColor[random]
     }
   },
   onLoad () {
-    this.createImg()
+    // this.createImg()
   },
   methods: {
     createImg () {
@@ -121,6 +132,17 @@ $content-text: rgba(0,0,0,.54);
     display: inline-block;
     vertical-align: middle;
     width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    span{
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      color: $title-text;
+      border-radius: 5px;
+      font-size: 36px;
+    }
     canvas{
       width: 80px;
       height: 80px;
