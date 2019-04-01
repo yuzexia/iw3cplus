@@ -16,13 +16,24 @@
     <div class="detail-content">
         <!-- <div v-html="detail.message"></div> -->
         <wxParse className="detail-message" :content="detail.message" @preview="preview" @navigate="navigate" :imageProp="imageProp" :noData="noData"></wxParse>
-        <div class="detail-share">
-          <button type="default" open-type="share">分享</button>
-        </div>
         <div class="detail-signature">
+          <a class="author" href="/pages/about/main" open-type="switchTab" style="background-image:url('../../../static/images/airen.jpg')"></a>
           <p>著作权归作者所有。</p>
           <p>商业转载请联系作者获得授权,非商业转载请注明出处。</p>
-          <p>原文链接: <i>{{detail.titleurl}}</i> © w3cplus.com</p>
+          <p><i>{{detail.titleurl}}</i></p>
+        </div>
+        <div class="detail-share">
+          <span>分享：</span>
+          <button class="share-button" plain="true" type="default" open-type="share"></button>
+          <button 
+            class="share-button share-moments" 
+            plain="true"
+            style="background-image: url('../../../static/images/wx_moments_icon.png');" 
+            type="default"
+            open-type="share"></button>
+        </div>
+        <div class="copyright">
+          © w3cplus.com
         </div>
     </div>
   </div>
@@ -44,7 +55,15 @@ export default {
         lazyLoad: true,
         domain: 'www.w3cplus.com'
       },
-      noData: '<div style="color: #00b7e9;text-align:center;">Loading...</div>'
+      noData: `<div class="no-data">
+                <div class="pic">
+                    <span class="child"></span>
+                    <span class="child"></span>
+                    <span class="child"></span>
+                    <span class="child"></span>
+                    <span class="child"></span>
+                </div>
+              </div>`
     }
   },
   computed: {
@@ -78,7 +97,7 @@ export default {
     console.log('销毁之前', this.detail)
   },
   onLoad () {
-    wx.showLoading({ title: '加载中...' })
+    // wx.showLoading({ title: '加载中...' })
     wx.showShareMenu({
       withShareTicket: true
     })
@@ -101,7 +120,7 @@ export default {
       console.log(detail)
       if (Number(detail.code) === 0 && detail.data) {
         this.detail = detail.data
-        wx.hideLoading()
+        // wx.hideLoading()
       }
     },
     preview (src, e) {
@@ -191,14 +210,101 @@ $hover: #29B4F0;
     .detail-signature{
       font-size: 14px;
       color: $text-sign;
+      .author{
+        display:block;
+        margin: 16px auto;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100% auto;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0,0,0,.5);
+      }
       p{
         line-height: 28px;
         i{
+          display: inline-block;
           color: $hover;
         }
       }
     }
+    // no-data
+    .no-data{
+      position: relative;
+      width: 100%;
+      height: 200px;
+      color: #00b7e9;
+      text-align:center;
+      .pic{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 40px;
+        font-size: 0;
+        .child{
+          display: inline-block;
+          margin: 0 2px;
+          width: 6px;
+          height: 40px;
+          transform: scaleY(0.4);
+          animation: loading 1s infinite;
+          background: #e5e5e5;
+          border-radius: 5px;
+          &:nth-child(2) {
+            animation-delay: 0.1s;
+          }
+          &:nth-child(3) {
+            animation-delay: 0.2s;
+          }
+          &:nth-child(4) {
+            animation-delay: 0.3s;
+          }
+          &:nth-child(5) {
+            animation-delay: 0.4s;
+          }
+        }
+      }
+      @keyframes loading{
+          0%, 40%, 100%{transform: scaleY(0.4)}
+          20%{transform: scaleY(1)}
+      }
+    }
+    // 分享
+    .detail-share{
+      display: flex;
+      margin: 20px auto 10px;
+      padding: 20px;
+      width: 100%;
+      height: 90px;
+      border: 1px solid rgba(9, 187, 7, .2);
+      border-radius: 10px;
+      box-sizing:border-box;
+      span{
+        display: inline-block;
+        width: 80px;
+        line-height: 50px;
+        text-align:center;
+      }
+      .share-button{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-image: url('../../../static/images/wx_logo_icon.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 35px auto;
+        border: 1px solid rgba(9, 187, 7, .5);
+      }
+    }
+    .copyright{
+      font-size: 14px;
+      color: $text-sign;
+      text-align: center;
+    }
   }
 }
 </style>
-

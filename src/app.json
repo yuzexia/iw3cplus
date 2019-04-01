@@ -1,14 +1,32 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/me/main",
-    "pages/detail/main"
+    "pages/detail/main",
+    "pages/about/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "W3Cplus",
+    "navigationBarTitleText": "w3cplus",
     "navigationBarTextStyle": "black",
     "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#29B4F0",
+    "list":[
+      {
+        "pagePath": "pages/index/main",
+        "text": "首页",
+        "iconPath": "static/images/file-text.png",
+        "selectedIconPath": "static/images/file-text-checked.png"
+      },
+      {
+        "pagePath": "pages/about/main",
+        "text": "关于",
+        "iconPath": "static/images/team.png",
+        "selectedIconPath": "static/images/team-checked.png"
+      }
+    ]
   }
 }

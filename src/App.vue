@@ -1,12 +1,12 @@
 <script>
 export default {
   created () {},
-  onLaunch () {
-    console.log('000000')
-    wx.showShareMenu({
-      withShareTicket: true
-    })
-  },
+  // onLaunch () {
+  //   console.log('000000')
+  //   wx.showShareMenu({
+  //     withShareTicket: true
+  //   })
+  // },
   onShow () {
     console.log('111111')
   },

@@ -140,7 +140,7 @@ $content-text: rgba(0,0,0,.54);
       width: 80px;
       height: 80px;
       color: $title-text;
-      border-radius: 5px;
+      border-radius: 3px;
       font-size: 36px;
     }
     canvas{

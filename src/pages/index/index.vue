@@ -23,6 +23,11 @@ export default {
   components: {
     Card
   },
+  onShareAppMessage () {
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
   onPullDownRefresh () {
     this.getLists(true)
   },
