@@ -23,14 +23,16 @@
           <p><i>{{detail.titleurl}}</i></p>
         </div>
         <div class="detail-share">
-          <span>分享：</span>
-          <button class="share-button" plain="true" type="default" open-type="share"></button>
-          <button 
-            class="share-button share-moments" 
-            plain="true"
-            style="background-image: url('../../../static/images/wx_moments_icon.png');" 
-            type="default"
-            open-type="share"></button>
+          <div class="text">分享到</div>
+          <div class="button-box">
+            <button class="share-button" plain="true" type="default" open-type="share"></button>
+            <!-- <button 
+              class="share-button share-moments" 
+              plain="true"
+              style="background-image: url('../../../static/images/wx_moments_icon.png');" 
+              type="default"
+              open-type="share"></button> -->
+          </div>
         </div>
         <div class="copyright">
           © w3cplus.com
@@ -274,24 +276,28 @@ $hover: #29B4F0;
     }
     // 分享
     .detail-share{
-      display: flex;
+      // display: flex;
       margin: 20px auto 10px;
-      padding: 20px;
-      width: 100%;
-      height: 90px;
-      border: 1px solid rgba(9, 187, 7, .2);
-      border-radius: 10px;
+      padding: 10px;
+      width: 50%;
+      height: auto;
+      // border: 1px solid rgba(9, 187, 7, .2);
+      border-radius: 5px;
       box-sizing:border-box;
-      span{
-        display: inline-block;
-        width: 80px;
-        line-height: 50px;
+      .text{
+        // display:none;
+        margin: 0 auto 10px;
         text-align:center;
+        font-size: 12px;
+        color: #aaa;
+      }
+      .button-box{
+        display: flex;
       }
       .share-button{
         display: inline-block;
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         background-image: url('../../../static/images/wx_logo_icon.png');
         background-repeat: no-repeat;
