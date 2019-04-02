@@ -46,8 +46,8 @@ export default {
           wx.getUserInfo({
             success: (res) => {
               this.userInfo = res.userInfo
-              console.log('this:::', this)
-              console.log('this.userInfo:::', this.userInfo)
+              // console.log('this:::', this)
+              // console.log('this.userInfo:::', this.userInfo)
             }
           })
         }
@@ -62,7 +62,7 @@ export default {
       }
       wx.showNavigationBarLoading()
       const list = await get('/weapp/lists', {page: this.page, size: 10})
-      console.log(list)
+      // console.log(list)
 
       if (list.data.list.length < 10 && this.page > 0) {
         this.more = false
@@ -95,7 +95,6 @@ export default {
     }
   },
   mounted () {
-    console.log('222222')
     this.getLists(true)
     // this.getShanbay()
   },

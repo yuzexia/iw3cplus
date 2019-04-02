@@ -17,7 +17,9 @@
         <!-- <div v-html="detail.message"></div> -->
         <wxParse className="detail-message" :content="detail.message" @preview="preview" @navigate="navigate" :imageProp="imageProp" :noData="noData"></wxParse>
         <div class="detail-signature">
-          <a class="author" href="/pages/about/main" open-type="switchTab" style="background-image:url('../../../static/images/airen.jpg')"></a>
+          <a class="author" href="/pages/about/main" open-type="switchTab">
+            <img :src="imgUrls.author" alt="">
+          </a>
           <p>著作权归作者所有。</p>
           <p>商业转载请联系作者获得授权,非商业转载请注明出处。</p>
           <p><i>{{detail.titleurl}}</i></p>
@@ -25,13 +27,16 @@
         <div class="detail-share">
           <div class="text">分享到</div>
           <div class="button-box">
-            <button class="share-button" plain="true" type="default" open-type="share"></button>
+            <button class="share-button" plain="true" type="default" open-type="share">
+              <img :src="imgUrls.wx" alt="">
+            </button>
             <!-- <button 
               class="share-button share-moments" 
               plain="true"
-              style="background-image: url('../../../static/images/wx_moments_icon.png');" 
               type="default"
-              open-type="share"></button> -->
+              open-type="share">
+                <img :src="imgUrls.moments" alt="">
+              </button> -->
           </div>
         </div>
         <div class="copyright">
@@ -65,7 +70,12 @@ export default {
                     <span class="child"></span>
                     <span class="child"></span>
                 </div>
-              </div>`
+              </div>`,
+      imgUrls: {
+        author: require('../../../static/images/airen.jpg'),
+        wx: require('../../../static/images/wx_logo_icon.png'),
+        moments: require('../../../static/images/wx_moments_icon.png')
+      }
     }
   },
   computed: {
@@ -90,13 +100,13 @@ export default {
     wxParse
   },
   mounted () {
-    console.log('config', this.$root.$mp)
+    // console.log('config', this.$root.$mp)
     this.tid = this.$root.$mp.query.id
     this.getDetail()
   },
   beforeDestroy () {
     this.detail = {}
-    console.log('销毁之前', this.detail)
+    // console.log('销毁之前', this.detail)
   },
   onLoad () {
     // wx.showLoading({ title: '加载中...' })
@@ -106,7 +116,7 @@ export default {
   },
   onUnload () {
     this.detail = {}
-    console.log('onUnload', this.detail)
+    // console.log('onUnload', this.detail)
   },
   onShareAppMessage () {
     return {
@@ -119,7 +129,7 @@ export default {
     // 获取详情
     async getDetail () {
       let detail = await get('/weapp/detail', { tid: this.tid })
-      console.log(detail)
+      // console.log(detail)
       if (Number(detail.code) === 0 && detail.data) {
         this.detail = detail.data
         // wx.hideLoading()
@@ -217,11 +227,14 @@ $hover: #29B4F0;
         margin: 16px auto;
         width: 100px;
         height: 100px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 100% auto;
         border-radius: 50%;
         box-shadow: 0 0 5px rgba(0,0,0,.5);
+        overflow: hidden;
+        img{
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+        }
       }
       p{
         line-height: 28px;
@@ -295,15 +308,22 @@ $hover: #29B4F0;
         display: flex;
       }
       .share-button{
+        padding: 0;
         display: inline-block;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background-image: url('../../../static/images/wx_logo_icon.png');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 35px auto;
-        border: 1px solid rgba(9, 187, 7, .5);
+        width: 50px;
+        height: 50px;
+        // border-radius: 50%;
+        // background-image: url('../../../static/images/wx_logo_icon.png');
+        // background-repeat: no-repeat;
+        // background-position: center center;
+        // background-size: 35px auto;
+        // border: 1px solid rgba(9, 187, 7, .5);
+        border: none;
+      }
+      img{
+        display:inline-block;
+        width: 50px;
+        height: 50px;
       }
     }
     .copyright{
