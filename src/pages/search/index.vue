@@ -202,9 +202,10 @@ export default {
             // background: #f66;
         }
         .search-btn{
+            padding: 0;
             width: 44px;
             height: 26px;
-            padding: 0;
+            line-height: 26px;
             border-radius: 20px;
             border: none;
             color: #fff;
@@ -231,10 +232,12 @@ export default {
             .tag{
                 display: inline-block;
                 margin: 5px;
-                padding: 5px 10px;
+                padding: 0 10px;
+                height: 28px;
+                line-height: 28px;
                 font-size: 12px;
                 color: #fff;
-                background: rgba(41, 180, 240, .8);
+                background: rgba(41, 180, 240, .9);
                 border-radius: 50px;
             }
         }
