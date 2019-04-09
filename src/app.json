@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/detail/main",
-    "pages/about/main"
+    "pages/search/main",
+    "pages/about/main",
+    "pages/detail/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,6 +21,12 @@
         "text": "首页",
         "iconPath": "static/images/file-text.png",
         "selectedIconPath": "static/images/file-text-checked.png"
+      },
+      {
+        "pagePath": "pages/search/main",
+        "text": "搜索",
+        "iconPath": "static/images/search.png",
+        "selectedIconPath": "static/images/search-checked.png"
       },
       {
         "pagePath": "pages/about/main",

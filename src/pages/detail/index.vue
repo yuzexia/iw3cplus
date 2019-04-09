@@ -7,7 +7,7 @@
       <div class="detail-basic">
         <span v-show="detail.author">作者：{{detail.author}}</span>
         <span v-show="detail.release_date">日期：{{format}}</span>
-        <span v-show="detail.views">浏览：{{detail.views}}</span>
+        <span v-show="detail.views">浏览：{{detail.views + detail.glance}}</span>
       </div>
       <div class="detail-tags">
         <span v-for="itl in detail.tags" :key="itl">{{itl}}</span>

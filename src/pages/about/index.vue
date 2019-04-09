@@ -9,6 +9,10 @@
     <div class="text">常用昵称“大漠”，
       <i>W3CPlus</i>创始人，目前就职于淘宝。对HTML5、CSS3和CSS处理器等前端脚本语言有非常深入的认识和丰富的实践经验，尤其专注对CSS3和动画的研究，是国内最早研究和使用CSS3和CSS处理器技术的一批人。现在主要在探讨学习JavaScript、React和Vue相关技术知识。CSS3、CSS处理器和Drupal中国布道者。2014年出版《图解CSS3：核心技术与案例实战》。
     </div>
+    <div class="group">
+      期待各位大佬进群交流开发心得=。=
+      <img :src="imgArr.wechatGroup" alt="" @tap="previewImage">
+    </div>
   </div>
 </template>
 <script>
@@ -17,7 +21,8 @@ export default {
     return {
       imgArr: {
         logoUrl: require('../../../static/images/logo.jpeg'),
-        authorUrl: require('../../../static/images/airen.jpg')
+        authorUrl: require('../../../static/images/airen.jpg'),
+        wechatGroup: require('../../../static/images/wx-qcode.png')
       }
     }
   },
@@ -25,14 +30,22 @@ export default {
     wx.showShareMenu({
       withShareTicket: true
     })
+  },
+  methods: {
+    previewImage () {
+      wx.previewImage({
+        current: 'http://www.xiayuze.com/wxtools/wechatGroup.png', // 当前显示图片的http链接
+        urls: ['http://www.xiayuze.com/wxtools/wechatGroup.png'] // 需要预览的图片http链接列表
+      })
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .about {
-  padding-top: 32px;
-  font-size: 14px;
+  padding-top: 16px;
+  font-size: 12px;
   color: #aaa;
   .bgimg {
     margin: 0 auto;
@@ -47,7 +60,7 @@ export default {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
   .text {
-    margin: 16px 0;
+    margin: 8px 0;
     padding: 0 16px;
     text-indent: 16px;
     i {
@@ -60,6 +73,15 @@ export default {
   .author {
     background-color: transparent;
     // border-radius: 50%;
+  }
+  .group{
+    text-align: center;
+    img{
+      margin:8px auto 16px;
+      display: block;
+      width: 144px;
+      height: 144px;
+    }
   }
 }
 </style>
