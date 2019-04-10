@@ -10,8 +10,7 @@
 
 > 大家可以加群交流交流开发心得，如群邀请过期，也可加我的微信拉你进群，
 
-![我的微信](http://www.xiayuze.com/wxtools/wechatGroup.png)
-![微信群](http://www.xiayuze.com/wxtools/wechatGroup.png)
+![我的微信](http://www.xiayuze.com/wxtools/me.png)![微信群](http://www.xiayuze.com/wxtools/wechatGroup.png)
 
 ### 特别感谢
 
