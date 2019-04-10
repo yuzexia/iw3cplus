@@ -185,8 +185,8 @@ $hover: #29B4F0;
         margin-right: 0;
       }
     }
-    .detail-basic {
-    }
+    // .detail-basic {
+    // }
     .detail-tags {
       font-size: 12px;
       // margin-top: 5px;

@@ -1,21 +1,19 @@
-# w3cplus-mini
+# iw3cplus小程序
 
-> A Mpvue project
+> 前端社区w3cplus.com的小程序
 
-## Build Setup
+### 体验
 
-``` bash
-# install dependencies
-npm install
+![iw3cplus小程序码](http://www.xiayuze.com/wxtools/w3cplus.jpg)
 
-# serve with hot reload at localhost:8080
-npm run dev
+### 微信社群
 
-# build for production with minification
-npm run build
+> 大家可以加群交流交流开发心得，如群邀请过期，也可加我的微信拉你进群，
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+![我的微信](http://www.xiayuze.com/wxtools/wechatGroup.png)
+![微信群](http://www.xiayuze.com/wxtools/wechatGroup.png)
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### 特别感谢
+
+- 感谢[w3cplus](https://www.w3cplus.com/)站长[大漠老师](https://github.com/airen)的支持
+- 感谢[林小志](https://github.com/linxz)的支持
