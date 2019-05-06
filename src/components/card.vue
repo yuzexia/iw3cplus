@@ -16,7 +16,7 @@
       </div>
     </a>
     <div class="item" v-if="index !== 0 && index % 18 === 0">
-      <ad unit-id="adunit-ba6f3529cae3d085"></ad>
+      <ad unit-id="adunit-be9fe5aa3b9064db"></ad>
     </div>
   </div>
   
