@@ -1,28 +1,28 @@
 <template>
   <div class="search">
     <div class="input-box">
-        <div class="search-input">
-            <input type="text"
-                    v-model="keyworld"
-                    focus="true"
-                    placeholder="搜索一下，你就知道"
-                    placeholder-style="#ccc">
-            <img @tap="clear" :class="{'block': showIcon}" :src="imgUrls.searchIcon" alt>
-            <button class="search-btn" @click="handleClick" size="mini">搜索</button>
-        </div>
+      <div class="search-input">
+        <input type="text"
+                v-model="keyworld"
+                focus="true"
+                placeholder="搜索一下，你就知道"
+                placeholder-style="#ccc">
+        <img @tap="clear" :class="{'block': showIcon}" :src="imgUrls.searchIcon" alt>
+        <button class="search-btn" @click="handleClick" size="mini">搜索</button>
+      </div>
     </div>
     <div class="search-hot" v-if="showTags">
-        <h3>标签</h3>
-        <div class="tags-box">
-            <span class="tag" v-for="item in tags" :key="item" @tap="searchHandle(true, item, 1)">{{item}}</span>
-        </div>
+      <h3>标签</h3>
+      <div class="tags-box">
+          <span class="tag" v-for="item in tags" :key="item" @tap="searchHandle(true, item, 1)">{{item}}</span>
+      </div>
     </div>
     <div class="search-content">
-        <Card v-for="item in lists" :key="item.id" :list="item"></Card>
+      <Card v-for="(item, i) in lists" :key="item.id" :list="item" :index="i"></Card>
     </div>
     <div class="search-empty" v-if="showNoData">
-        <img :src="imgUrls.noData" alt="">
-        没有找到你想要的东东...
+      <img :src="imgUrls.noData" alt="">
+      没有找到你想要的东东...
     </div>
   </div>
 </template>
@@ -197,13 +197,13 @@ export default {
         }
         input{
             height: 32px;
-            width: calc(100% - 70px);
+            width: calc(100% - 76px);
             font-size: 14px;
             // background: #f66;
         }
         .search-btn{
             padding: 0;
-            width: 44px;
+            width: 50px;
             height: 26px;
             line-height: 26px;
             border-radius: 20px;
@@ -237,7 +237,7 @@ export default {
                 line-height: 28px;
                 font-size: 12px;
                 color: #fff;
-                background: rgba(41, 180, 240, .9);
+                background: rgba(41, 180, 240, .75);
                 border-radius: 50px;
             }
         }

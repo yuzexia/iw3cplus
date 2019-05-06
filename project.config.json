@@ -14,7 +14,7 @@
 	"qcloudRoot": "server/",
 	"appid": "wx5cfea44e3c9b8f5d",
 	"projectname": "w3cplus-mini",
-	"libVersion": "2.5.0",
+	"libVersion": "2.6.0",
 	"condition": {
 		"search": {
 			"current": -1,

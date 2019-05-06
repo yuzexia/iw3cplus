@@ -1,23 +1,30 @@
 <template>
-  <a class="item" :href="detailUrl">
-    <div class="item-left">
-      <h3>{{list.title}}</h3>
-      <div class="content">{{list.summary}}</div>
-      <div class="info">
-        <span class="author">{{list.author}}</span>
-        <span class="time">{{format}}</span>
+  <div>
+    <a class="item" :href="detailUrl">
+      index:::{{index}}
+      <div class="item-left">
+        <h3>{{list.title}}</h3>
+        <div class="content">{{list.summary}}</div>
+        <div class="info">
+          <span class="author">{{list.author}}</span>
+          <span class="time">{{format}}</span>
+        </div>
       </div>
+      <div class="item-right" ref="cardClient">
+        <!-- <canvas :canvas-id="canvasId"></canvas> -->
+        <span :style="{background: formatBackground}">{{formatTitle}}</span>
+      </div>
+    </a>
+    <div class="item" v-if="index !== 0 && index % 18 === 0">
+      <ad unit-id="adunit-ba6f3529cae3d085"></ad>
     </div>
-    <div class="item-right" ref="cardClient">
-      <!-- <canvas :canvas-id="canvasId"></canvas> -->
-      <span :style="{background: formatBackground}">{{formatTitle}}</span>
-    </div>
-  </a>
+  </div>
+  
 </template>
 
 <script>
 export default {
-  props: ['list'],
+  props: ['list', 'index'],
   data () {
     return {
       imgUrl: '',
