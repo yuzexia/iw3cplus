@@ -17,28 +17,30 @@
         <!-- <div v-html="detail.message"></div> -->
         <wxParse className="detail-message" :content="detail.message" @preview="preview" @navigate="navigate" :imageProp="imageProp" :noData="noData"></wxParse>
         <div class="detail-signature">
-          <a class="author" href="/pages/about/main" open-type="switchTab">
-            <img :src="imgUrls.author" alt="">
-          </a>
+          <div class="detail-share">
+            <div class="text">分享到</div>
+            <div class="button-box">
+              <button class="share-button" plain="true" type="default" open-type="share">
+                <img :src="imgUrls.wx" alt="">
+              </button>
+              <!-- <button 
+                class="share-button share-moments" 
+                plain="true"
+                type="default"
+                open-type="share">
+                  <img :src="imgUrls.moments" alt="">
+                </button> -->
+            </div>
+          </div>
+          <ad unit-id="adunit-ba6f3529cae3d085"></ad>
           <p>著作权归作者所有。</p>
           <p>商业转载请联系作者获得授权,非商业转载请注明出处。</p>
           <p><i>{{detail.titleurl}}</i></p>
+          <a class="author" href="/pages/about/main" open-type="switchTab">
+            <img :src="imgUrls.author" alt="">
+          </a>
         </div>
-        <div class="detail-share">
-          <div class="text">分享到</div>
-          <div class="button-box">
-            <button class="share-button" plain="true" type="default" open-type="share">
-              <img :src="imgUrls.wx" alt="">
-            </button>
-            <!-- <button 
-              class="share-button share-moments" 
-              plain="true"
-              type="default"
-              open-type="share">
-                <img :src="imgUrls.moments" alt="">
-              </button> -->
-          </div>
-        </div>
+        
         <div class="copyright">
           © w3cplus.com
         </div>
