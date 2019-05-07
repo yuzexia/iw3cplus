@@ -9,9 +9,12 @@
     <div class="text">常用昵称“大漠”，
       <i>W3CPlus</i>创始人，目前就职于淘宝。对HTML5、CSS3和CSS处理器等前端脚本语言有非常深入的认识和丰富的实践经验，尤其专注对CSS3和动画的研究，是国内最早研究和使用CSS3和CSS处理器技术的一批人。现在主要在探讨学习JavaScript、React和Vue相关技术知识。CSS3、CSS处理器和Drupal中国布道者。2014年出版《图解CSS3：核心技术与案例实战》。
     </div>
-    <div class="group">
+    <!-- <div class="group">
       期待各位大佬进群交流开发心得=。=
       <img :src="imgArr.wechatGroup" alt="" @tap="previewImage">
+    </div> -->
+    <div class="adunit">
+      <ad unit-id="adunit-0fccc60c8af8a8a6"></ad>
     </div>
   </div>
 </template>
@@ -82,6 +85,10 @@ export default {
       width: 144px;
       height: 144px;
     }
+  }
+  .adunit{
+    padding: 10px 10px 0;
+    box-sizing: border-box;
   }
 }
 </style>

@@ -16,6 +16,9 @@
       <div class="tags-box">
           <span class="tag" v-for="item in tags" :key="item" @tap="searchHandle(true, item, 1)">{{item}}</span>
       </div>
+      <div class="adunit">
+        <ad unit-id="adunit-0fccc60c8af8a8a6"></ad>
+      </div>
     </div>
     <div class="search-content">
       <Card v-for="(item, i) in lists" :key="item.id" :list="item" :index="i"></Card>
@@ -221,26 +224,32 @@ export default {
         margin-top: 60px;
     }
     .search-hot{
-        padding: 20px 10px;
-        box-sizing: border-box;
-        h3{
-            font-size: 14px;
-            color: #666;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      h3{
+          font-size: 14px;
+          color: #666;
+      }
+      .tags-box{
+        margin: 8px 0;
+        .tag{
+          display: inline-block;
+          margin: 5px;
+          padding: 0 10px;
+          height: 28px;
+          line-height: 28px;
+          font-size: 12px;
+          color: #fff;
+          background: rgba(41, 180, 240, .75);
+          border-radius: 50px;
         }
-        .tags-box{
-            margin: 8px 0;
-            .tag{
-                display: inline-block;
-                margin: 5px;
-                padding: 0 10px;
-                height: 28px;
-                line-height: 28px;
-                font-size: 12px;
-                color: #fff;
-                background: rgba(41, 180, 240, .75);
-                border-radius: 50px;
-            }
-        }
+      }
+      .adunit{
+        // position:fixed;
+        // bottom: 10px;
+        // left: 10px; 
+        // right: 10px;
+      }
     }
     .search-empty{
         padding-top: 20px;
@@ -249,10 +258,10 @@ export default {
         text-align: center;
         color: #ccc;
         img{
-            display: block;
-            margin: 5px auto;
-            width: 221px;
-            height: 109px;
+          display: block;
+          margin: 5px auto;
+          width: 221px;
+          height: 109px;
         }
     }
 }

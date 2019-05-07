@@ -15,7 +15,7 @@
         <span :style="{background: formatBackground}">{{formatTitle}}</span>
       </div>
     </a>
-    <div class="item" v-if="index !== 0 && index % 18 === 0">
+    <div class="item adunit" v-if="index !== 0 && index % 10 === 0">
       <ad unit-id="adunit-be9fe5aa3b9064db"></ad>
     </div>
   </div>
@@ -154,6 +154,11 @@ $content-text: rgba(0,0,0,.54);
       width: 80px;
       height: 80px;
     }
+  }
+}
+.adunit{
+  &:empty{
+    display: none;
   }
 }
 </style>
